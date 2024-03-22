@@ -1,0 +1,22 @@
+specVersion: 0.0.2
+apiVersion: 0.0.2
+name: eg_hello
+description: "This demo CLE showcase the usage of eth transaction source [EXPERIMENTAL]."
+repository: https://github.com/ora-io/cle
+dataSources:
+  - kind: ethereum
+    network: sepolia
+    transaction:
+      - from: '0x9FA3c00a92Ec5f96B1Ad2527ab41B3932EFEDa58'
+        to: '*'
+
+mapping:
+  language: wasm/assemblyscript
+  file: ./mapping.ts
+  handler: handleBlocks
+
+# Only enable for using zkAutomation
+# dataDestinations:
+#   - kind: ethereum
+#     network: sepolia
+#     address: "0x0000000000000000000000000000000000000001"
